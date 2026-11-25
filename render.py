@@ -41,29 +41,29 @@ LEADS = [
          tagcol=(200, 140, 20), scene="tanker",
          kicker="ENERGY \u00b7 SHIPPING",
          head="Four tankers reported hit by mines in the Strait of Hormuz",
-         body="Iran says four tankers struck mines and caught fire; its Guards say "
-              "they attacked a container ship. A maritime centre calls the claims "
-              "unconfirmed.",
+         body="Iran says four tankers struck mines and caught fire. Separately, "
+              "its Guards say they attacked a container ship. A maritime centre "
+              "calls both claims unconfirmed.",
          source="Reuters \u00b7 AP", lat=26.5, lon=56.0),
     dict(n=3, region="EUROPE", place="GULF OF FINLAND", tag="CONFIRMED",
          tagcol=(46, 125, 60), scene="shipstrike",
          kicker="WAR \u00b7 UKRAINE",
-         head="Ukraine strikes Russian ships at sea, in two seas at once",
+         head="Ukraine hits Russian ships in Gulf of Finland and off Libya",
          body="Kyiv says drones hit the cargo ship Sparta II in the Gulf of Finland "
-              "and two ships off Libya, as Poland accuses Russia of a new airspace "
-              "breach.",
+              "and two Russian ships off Libya, as Poland accuses Russia of a new "
+              "airspace breach.",
          source="Reuters \u00b7 Kyiv Independent", lat=59.8, lon=24.0),
 ]
 
 MEDIUMS = [
     dict(n=4, region="AFRICA", place="LAUSANNE", tag="OFFICIAL",
          tagcol=(46, 104, 158), scene="trophy", kicker="SPORT \u00b7 FOOTBALL",
-         head="Senegal champions again as court restores title",
+         head="Senegal champions again, title restored",
          body="Court overturns the award to Morocco, which vows a challenge.",
          source="Reuters \u00b7 AP", lat=46.5, lon=6.6),
     dict(n=5, region="MIDDLE EAST", place="RIYADH", tag="REPORTED",
          tagcol=(90, 84, 72), scene="tower", kicker="CONFLICT \u00b7 SAUDI ARABIA",
-         head="Drone hits PIF tower in Riyadh; at least 11 wounded",
+         head="Drone hits PIF tower; 11 wounded",
          body="Suspected Houthi strike on the fund's HQ; second hit in a week.",
          source="Saudi authorities \u00b7 Reuters", lat=24.7, lon=46.7),
     dict(n=6, region="MIDDLE EAST", place="ADEN, YEMEN", tag="CLAIM",
@@ -78,7 +78,7 @@ MEDIUMS = [
          source="President de la Espriella \u00b7 AP", lat=10.4, lon=-75.5),
     dict(n=8, region="MIDDLE EAST", place="GAZA CITY", tag="CONFIRMED",
          tagcol=(46, 125, 60), scene="blast", kicker="CONFLICT \u00b7 GAZA",
-         head="Israel kills Hamas security chief in Gaza strike",
+         head="Israel kills Hamas security chief",
          body="Hamas security chief Naeem Abu Nahel and six others die.",
          source="Gaza officials \u00b7 Reuters", lat=31.5, lon=34.5),
     dict(n=9, region="ASIA", place="ESKISEHIR, T\u00dcRKIYE", tag="OFFICIAL",
@@ -88,12 +88,12 @@ MEDIUMS = [
          source="Defence Ministry \u00b7 AFP", lat=39.8, lon=30.5),
     dict(n=10, region="MIDDLE EAST", place="BAGHDAD, IRAQ", tag="OFFICIAL",
          tagcol=(46, 104, 158), scene="oil", kicker="POLITICS \u00b7 IRAQ",
-         head="Iraq orders federal control of Kurdish oilfields",
+         head="Iraq orders federal control of oilfields",
          body="Baghdad to run Kurdish oilfields and crossings; Erbil objects.",
          source="Reuters \u00b7 AP", lat=33.3, lon=44.4),
     dict(n=11, region="SOUTH ASIA", place="DHAKA, BANGLADESH", tag="CLAIM",
          tagcol=(200, 140, 20), scene="plane", kicker="POLITICS \u00b7 BANGLADESH",
-         head="Exiled ex-PM Hasina plans return on 16 December",
+         head="Exiled ex-PM Hasina to return 16 Dec",
          body="Hasina to fly home for Victory Day; Dhaka demands extradition.",
          source="Hasina spokesperson \u00b7 Reuters", lat=23.8, lon=90.4),
     dict(n=12, region="OCEANIA", place="CARRARA, AUSTRALIA", tag="OFFICIAL",
@@ -101,11 +101,11 @@ MEDIUMS = [
          head="England level T20 series with eight-wicket rout",
          body="England chase 184 in 13.1 overs; the series stands at 1\u20131.",
          source="ESPNcricinfo", lat=-28.0, lon=153.4),
-    dict(n=13, region="SOUTH ASIA", place="DOHA, QATAR", tag="OFFICIAL",
-         tagcol=(46, 104, 158), scene="bat", kicker="SPORT \u00b7 CRICKET",
-         head="Sooryavanshi smashes 204 off 53 balls for India A",
-         body="The teenager's 28 sixes power a seven-wicket win over the UAE.",
-         source="ESPNcricinfo", lat=25.3, lon=51.5),
+    dict(n=13, region="EUROPE", place="OSLO, NORWAY", tag="OFFICIAL",
+         tagcol=(46, 104, 158), scene="aid", kicker="AID \u00b7 UKRAINE WAR",
+         head="Norway pledges $7bn Ukraine aid for 2027",
+         body="Oslo commits $7bn+ for 2027; Kyiv seeks \u20ac115bn more.",
+         source="Reuters \u00b7 AP", lat=59.9, lon=10.7),
 ]
 
 ALSO = [
@@ -124,7 +124,7 @@ ALSO = [
     (26, "Pentagon rebukes Canada over defence gaps"),
     (27, "US blacklists Megaspeed in Nvidia chip scandal"),
     (28, "Zelensky urges four-party peace talks soon"),
-    (29, "Norway pledges at least $7bn Ukraine aid for 2027"),
+    (29, "Sooryavanshi smashes 204 off 53 balls for India A"),
     (30, "Ukraine needs \u20ac115bn outside help in 2027"),
     (31, "Germany first into Ukraine\u2019s Delta war system"),
     (32, "Moldova: seven Russian drones crossed airspace"),
@@ -137,7 +137,7 @@ NUMBERS = [
     ("25", "hostages seized at a supermarket in Cartagena"),
     ("$7bn", "Norway\u2019s Ukraine aid pledge for 2027"),
     ("60 km", "how close Houthi fighters are to Aden"),
-    ("204", "runs off 53 balls by Sooryavanshi for India A"),
+    ("\u20ac115bn", "outside help Ukraine says it needs in 2027"),
 ]
 
 REGIONS = [
@@ -370,6 +370,18 @@ def scene(d, kind, x, y, w, h):
         d.ellipse([X(0.76), Y(0.22), X(0.84), Y(0.32)], fill=RED)
         d.arc([X(0.60), Y(0.30), X(0.90), Y(0.60)], 200, 330, fill=(255, 255, 255), width=2)
         d.arc([X(0.55), Y(0.38), X(0.85), Y(0.68)], 200, 330, fill=(255, 255, 255), width=2)
+    elif kind == "aid":
+        d.rectangle([x, y, x + w, y + h], fill=(207, 224, 234))
+        for cx, cy in [(0.15, 0.75), (0.80, 0.70)]:
+            d.ellipse([X(cx), Y(cy), X(cx + 0.14), Y(cy + 0.10)], fill=(255, 255, 255))
+        d.pieslice([X(0.30), Y(0.10), X(0.70), Y(0.42)], 180, 360, fill=(179, 39, 30))
+        d.line([X(0.32), Y(0.26), X(0.46), Y(0.58)], fill=(60, 50, 40), width=2)
+        d.line([X(0.68), Y(0.26), X(0.54), Y(0.58)], fill=(60, 50, 40), width=2)
+        d.rectangle([X(0.42), Y(0.58), X(0.58), Y(0.78)], fill=(150, 110, 60))
+        d.line([X(0.50), Y(0.58), X(0.50), Y(0.78)], fill=(90, 60, 30), width=2)
+        d.rectangle([X(0.46), Y(0.63), X(0.54), Y(0.73)], fill=(255, 255, 255))
+        d.rectangle([X(0.488), Y(0.645), X(0.512), Y(0.715)], fill=(179, 39, 30))
+        d.rectangle([X(0.472), Y(0.668), X(0.528), Y(0.692)], fill=(179, 39, 30))
     else:
         d.rectangle([x, y, x + w, y + h], fill=(220, 214, 196))
 
